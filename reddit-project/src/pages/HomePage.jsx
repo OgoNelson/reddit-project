@@ -5,17 +5,17 @@ import { Outlet } from "react-router-dom";
 
 function HomePage() {
   return (
-    <div className="grid grid-cols-1 h-[100vh] sm:grid-cols-7 ">
-      <div className="hidden sm:block col-span-1 ">
+    <div className="grid grid-cols-1 h-[100vh] sm:grid-cols-7  ">
+      <div className="hidden sm:block col-span-1 md:col-span-2 lg:col-span-1  ">
         <SideBar />
       </div>
 
-      <div className="bg-stone-600 col-span-6">
-        <div className="bg-pink-600 h-[13vh]">
+      <div className=" col-span-6 md:col-span-5 lg:col-span-6">
+        <div className="shadow-lg h-[13vh] p-4">
           <Navbar />
         </div>
 
-        <div className="bg-blue-200 h-[85vh]">
+        <div className="bg-stone-100 h-[85vh] p-4">
           <Outlet />
         </div>
       </div>
