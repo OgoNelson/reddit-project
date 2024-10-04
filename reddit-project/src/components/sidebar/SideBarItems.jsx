@@ -9,6 +9,7 @@ import { Grid2 } from "@mui/material";
 
 function SideBarItems({ primary, icon, icon2 }) {
   const [isClicked, setIsClicked] = useState(false);
+  const [hover, setHovered] = useState(false);
 
   const handleClicked = () => {
     setIsClicked(!isClicked);
@@ -18,9 +19,22 @@ function SideBarItems({ primary, icon, icon2 }) {
       <Grid2>
         <Grid2 item xs={12} md={6}>
           <List sx={{ margin: "0" }}>
-            <ListItem disablePadding>
+            <ListItem
+              disablePadding
+              secondaryAction={
+                isClicked ? (
+                  <KeyboardArrowUpIcon
+                    sx={{ color: hover ? "red" : "black", width: "20px" }}
+                  />
+                ) : (
+                  <List sx={{ color: hover ? "red" : "black" }}>{icon2}</List>
+                )
+              }
+            >
               <ListItemButton
                 onClick={handleClicked}
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
                 sx={{
                   padding: "0 0 0 13px",
                   display: "flex",
@@ -31,7 +45,7 @@ function SideBarItems({ primary, icon, icon2 }) {
                   "&:hover": {
                     color: "#ff1800", // Changes all text and icons to red on hover
                     "& .MuiListItemIcon-root": {
-                      color: "#ff1800", // Changes the icon color on hover
+                      color: "#ff1800", // Changes the primary icon color on hover
                     },
                   },
                 }}
@@ -49,17 +63,10 @@ function SideBarItems({ primary, icon, icon2 }) {
                   <ListItemText
                     primary={primary}
                     primaryTypographyProps={{
-                      style: { fontSize: "13px", fontWeight: "550" },
+                      style: { fontSize: "12px", fontWeight: "550" },
                     }}
                   />
                 </div>
-
-                {icon2 ? (
-                  <ListItemIcon sx={{ color: "black", opacity: "0.5" }}>
-                    {/* {icon2} */}
-                    {isClicked ? <KeyboardArrowUpIcon /> : icon2}
-                  </ListItemIcon>
-                ) : null}
               </ListItemButton>
             </ListItem>
           </List>

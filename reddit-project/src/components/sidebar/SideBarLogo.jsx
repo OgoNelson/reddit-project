@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-// import RedditLogo from "../../../public/";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { useMediaQuery, useTheme } from "@mui/material";
 import {
   Box,
-  Divider,
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
 } from "@mui/material";
 
@@ -25,12 +23,16 @@ function SideBarLogo() {
     setMailDisplay("Onyeka092@gmail.com");
     setIsUserEmai(false);
   };
+
+  const theme = useTheme();
+  const isMediumScreen = useMediaQuery(theme.breakpoints.up("md")); // For screens md and up
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg")); // For screens lg and up
   return (
-    <div className="relative">
+    <div className="relative border-b-[1px]">
       <Box className="h-[13vh]  flex flex-col justify-center ">
         <img
-          className=" ml-[10px] md:w-[8vw] md:h-[6vh]"
-          src="/Reddit-Logo.png"
+          className=" ml-[10px] md:w-[15vw] md:h-[4vh] lg:w-[6vw] lg:h-[5vh]"
+          src="/Reddit-Logo.jpg"
           alt="reddit-logo"
         />
         <Box>
@@ -42,29 +44,22 @@ function SideBarLogo() {
               <ListItemButton>
                 <ListItemText
                   primary={mailDisplay}
-                  primaryTypographyProps={{ style: { fontSize: "13px" } }}
+                  primaryTypographyProps={{
+                    fontSize: isLargeScreen
+                      ? "10px"
+                      : isMediumScreen
+                      ? "18px"
+                      : "13px",
+                  }}
                 />
               </ListItemButton>
             </ListItem>
           </List>
         </Box>
-        <Divider />
       </Box>
       {isUserEmai && (
-        <div className="absolute z-20 h-fit p-4 bg-white w-full shadow-lg transition">
+        <div className="absolute z-20 h-fit p-4 bg-stone-100 border shadow-md w-full  transition">
           <ul className="">
-            <ListItemButton
-              disablePadding
-              onClick={handleEmail1}
-              className="p-2 text-[13px] shadow-sm mb-2 hover:text-red-400 transition"
-            >
-              <ListItemText
-                primaryTypographyProps={{
-                  style: { fontSize: "13px" },
-                }}
-                primary="Onyeka092@gmail.com"
-              />
-            </ListItemButton>
             <ListItemButton
               disablePadding
               onClick={handleEmail2}
@@ -74,7 +69,27 @@ function SideBarLogo() {
                 primaryTypographyProps={{
                   style: { fontSize: "13px" },
                 }}
-                primary="osonwa@gmail.com"
+                primary={
+                  mailDisplay === "kikoherrsc@gmail.com"
+                    ? "kikoherrsc@gmail.com"
+                    : "Onyeka092@gmail.com"
+                }
+              />
+            </ListItemButton>
+            <ListItemButton
+              disablePadding
+              onClick={handleEmail1}
+              className="p-2 text-[13px] shadow-sm mb-2 hover:text-red-400 transition"
+            >
+              <ListItemText
+                primaryTypographyProps={{
+                  style: { fontSize: "13px" },
+                }}
+                primary={
+                  mailDisplay === "kikoherrsc@gmail.com"
+                    ? "kikoherrsc@gmail.com"
+                    : "Osonwap083@gmail.com"
+                }
               />
             </ListItemButton>
           </ul>

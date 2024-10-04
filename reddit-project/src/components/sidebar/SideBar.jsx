@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-
+// All Material icones
 import SideBarItems from "./SideBarItems";
 import HomeIcon from "@mui/icons-material/Home";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import ViewQuiltIcon from "@mui/icons-material/ViewQuilt";
 import HelpIcon from "@mui/icons-material/Help";
-import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import InfoIcon from "@mui/icons-material/Info";
 import SideBarLogo from "./SideBarLogo";
 import SideBarSearch from "./SideBarSearch";
+import BuildIcon from "@mui/icons-material/Build";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 
 function SideBar() {
   return (
@@ -23,15 +23,18 @@ function SideBar() {
 
         {/* Sidebar Buttons */}
         <div>
-          <SideBarItems primary="Home" icon={<HomeIcon />} />
+          <SideBarItems
+            primary="Home"
+            icon={<HomeIcon sx={{ width: "20px" }} />}
+          />
           <SideBarItems
             primary="Notification"
-            icon={<NotificationsNoneIcon />}
+            icon={<NotificationsNoneIcon sx={{ width: "20px" }} />}
           />
           <SideBarItems
             primary="My subreddits"
-            icon={<ViewQuiltIcon />}
-            icon2={<MoreVertIcon />}
+            icon={<ViewQuiltIcon sx={{ width: "20px" }} />}
+            icon2={<MoreVertIcon sx={{ width: "20px" }} />}
           />
           <SideBarItems primary="Gaming" />
           <SideBarItems primary="Funny" />
@@ -44,19 +47,19 @@ function SideBar() {
         <hr />
         <SideBarItems
           primary="About"
-          icon={<InfoIcon />}
-          icon2={<KeyboardArrowDownIcon />}
+          icon={<SupportAgentIcon sx={{ width: "20px" }} />}
+          icon2={<KeyboardArrowDownIcon sx={{ width: "20px" }} />}
         />
 
         <SideBarItems
           primary="Help"
-          icon={<HelpIcon />}
-          icon2={<KeyboardArrowDownIcon />}
+          icon={<HelpIcon sx={{ width: "20px" }} />}
+          icon2={<KeyboardArrowDownIcon sx={{ width: "20px" }} />}
         />
         <SideBarItems
           primary="Apps $ Tools"
-          icon={<SettingsApplicationsIcon />}
-          icon2={<KeyboardArrowDownIcon />}
+          icon={<BuildIcon sx={{ width: "20px" }} />}
+          icon2={<KeyboardArrowDownIcon sx={{ width: "20px" }} />}
         />
       </div>
     </div>

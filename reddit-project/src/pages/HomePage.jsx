@@ -11,7 +11,7 @@ function HomePage() {
       </div>
 
       <div className=" col-span-6 md:col-span-5 lg:col-span-6">
-        <div className="shadow-lg h-[13vh] p-4">
+        <div className="shadow-lg   h-[13vh] p-4">
           <Navbar />
         </div>
 
