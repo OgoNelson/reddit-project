@@ -1,13 +1,48 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import * as React from "react";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
+
+const hover = {
+  ":hover": {
+    color: "red",
+  },
+};
 
 function Navbar() {
+  const [value, setValue] = React.useState(0);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
-    <div className="">
-      <ul>
-        <li>Home</li>
-      </ul>
-    </div>
+    <Box
+      sx={{
+        backgroundColor: "#f0efef",
+        color: "#E5E5E5",
+      }}
+      className="hidden sm:block"
+    >
+      <Tabs
+        className=" shadow-gray-400"
+        onChange={handleChange}
+        value={value}
+        sx={{
+          ".Mui-selected": {
+            color: `black`,
+          },
+        }}
+        aria-label="Tabs where each tab needs to be selected manually"
+      >
+        <Tab sx={{ ...hover }} label="Item HOT" />
+        <Tab underline="hover" label="Item NEW" />
+        <Tab label="RISING" />
+        <Tab label="CONTROVERSIAL" />
+        <Tab label="TOP" />
+        <Tab label="GILED" />
+        <Tab label="PROMOTED" />
+      </Tabs>
+    </Box>
   );
 }
 
