@@ -32,7 +32,7 @@ function SideBarLogo() {
       <Box className="h-[13vh]  flex flex-col justify-center ">
         <img
           className=" ml-[10px] md:w-[15vw] md:h-[4vh] lg:w-[6vw] lg:h-[5vh]"
-          src="/Reddit-Logo.jpg"
+          src="/Reddit-Logo.png"
           alt="reddit-logo"
         />
         <Box>

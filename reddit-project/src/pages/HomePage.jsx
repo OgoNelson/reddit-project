@@ -28,8 +28,7 @@ function HomePage() {
           </div>
           <Typography className="sm:hidden bg-[#E5E5E5]">Filter by </Typography>
         </div>
-
-        <div className="bg-stone-100 h-[90vh] sm:h-[82vh] p-4">
+        <div className="bg-stone-100 h-[85vh] p-[1em] overflow-y-scroll lg:p-[8em]">
           <Outlet />
         </div>
       </div>
