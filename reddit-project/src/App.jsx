@@ -2,6 +2,7 @@ import React from "react";
 import { HomePage, HandleError } from "./pages";
 import Testin from "./components/navbar/Testin";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ThemeWrapper from "./theme/ThemeWrapper";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,11 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeWrapper>
+      <RouterProvider router={router} />
+    </ThemeWrapper>
+  );
 }
 
 export default App;
