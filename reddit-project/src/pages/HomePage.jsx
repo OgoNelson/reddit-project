@@ -23,7 +23,7 @@ function HomePage() {
           <div className="h-[10vh] sm:hidden">
             <ButtonNav />
           </div>
-          <div className="h-[8vh] hidden">
+          <div className="h-[8vh] hidden sm:block">
             <Navbar />
           </div>
           <Typography className="sm:hidden bg-[#E5E5E5]">Filter by </Typography>
