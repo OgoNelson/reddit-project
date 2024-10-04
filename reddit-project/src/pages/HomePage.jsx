@@ -15,7 +15,7 @@ function HomePage() {
           <Navbar />
         </div>
 
-        <div className="bg-stone-100 h-[85vh] p-4">
+        <div className="bg-stone-100 h-[85vh] p-[1em] overflow-y-scroll lg:p-[8em]">
           <Outlet />
         </div>
       </div>
