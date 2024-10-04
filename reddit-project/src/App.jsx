@@ -1,5 +1,5 @@
 import React from "react";
-import { HomePage, HandleError } from "./pages";
+import { HomePage, HandleError, PostPage } from "./pages";
 import Testin from "./components/navbar/Testin";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ThemeWrapper from "./theme/ThemeWrapper";
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Testin />,
+        element: <PostPage />,
       },
     ],
   },
