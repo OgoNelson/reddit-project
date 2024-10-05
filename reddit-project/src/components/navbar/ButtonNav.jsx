@@ -12,29 +12,29 @@ function ButtonNav() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar className="flex ">
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon sx={{ color: grey[600] }} />
-          </IconButton>
-          <Box className="flex">
+        <Toolbar className="flex justify-between">
+          <div>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon sx={{ color: grey[600] }} />
+            </IconButton>
             <IconButton>
               <img src="/Reddit-Logo.png" alt="" className="h-[4vh]" />
             </IconButton>
-            <IconButton
-              className=" justify-end"
-              size="large"
-              aria-label="search"
-              color="inherit"
-            >
-              <SearchIcon sx={{ color: grey[600] }} />
-            </IconButton>
-          </Box>
+          </div>
+          <IconButton
+            className=" justify-end"
+            size="large"
+            aria-label="search"
+            color="inherit"
+          >
+            <SearchIcon sx={{ color: grey[600] }} />
+          </IconButton>
         </Toolbar>
       </AppBar>
     </Box>

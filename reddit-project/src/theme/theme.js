@@ -16,6 +16,15 @@ const theme = createTheme({
         },
       },
     },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          ":hover": {
+            color: "red",
+          },
+        },
+      },
+    },
   },
 });
 

@@ -3,12 +3,6 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 
-const hover = {
-  ":hover": {
-    color: "red",
-  },
-};
-
 function Navbar() {
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
@@ -27,15 +21,10 @@ function Navbar() {
         className=" shadow-gray-400"
         onChange={handleChange}
         value={value}
-        sx={{
-          ".Mui-selected": {
-            color: `black`,
-          },
-        }}
         aria-label="Tabs where each tab needs to be selected manually"
       >
-        <Tab sx={{ ...hover }} label="Item HOT" />
-        <Tab underline="hover" label="Item NEW" />
+        <Tab label="HOT" />
+        <Tab underline="hover" label="NEW" />
         <Tab label="RISING" />
         <Tab label="CONTROVERSIAL" />
         <Tab label="TOP" />
