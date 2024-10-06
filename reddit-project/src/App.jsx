@@ -1,8 +1,8 @@
 import React from "react";
 import { HomePage, HandleError, PostPage } from "./pages";
-import Testin from "./components/navbar/Testin";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ThemeWrapper from "./theme/ThemeWrapper";
+import CommentPage from "./pages/CommentPage";
 
 const router = createBrowserRouter([
   {
@@ -14,9 +14,14 @@ const router = createBrowserRouter([
         index: true,
         element: <PostPage />,
       },
+      {
+        path: "comment/:id",
+        element: <CommentPage />, // Render a specific comment based on ID
+      },
     ],
   },
 ]);
+
 function App() {
   return (
     <ThemeWrapper>

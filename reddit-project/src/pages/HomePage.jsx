@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/navbar/Navbar";
+// import Navbar from "../components/navbar/Navbar";
 import SideBar from "../components/sidebar/SideBar";
 import { Outlet } from "react-router-dom";
 
@@ -11,11 +11,7 @@ function HomePage() {
       </div>
 
       <div className=" col-span-6 md:col-span-5 lg:col-span-6">
-        <div className="shadow-lg   h-[13vh] p-4">
-          <Navbar />
-        </div>
-
-        <div className="bg-stone-100 h-[85vh] p-[1em] overflow-y-scroll lg:p-[8em]">
+        <div className="bg-stone-100 h-[100vh]  overflow-y-scroll ">
           <Outlet />
         </div>
       </div>
