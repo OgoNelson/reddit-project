@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/navbar/Navbar";
+// import Navbar from "../components/navbar/Navbar";
 import SideBar from "../components/sidebar/SideBar";
 import { Outlet } from "react-router-dom";
 import ButtonNav from "../components/navbar/ButtonNav";
@@ -12,7 +12,6 @@ function HomePage() {
       <div className="hidden sm:block col-span-1 md:col-span-2 lg:col-span-1  ">
         <SideBar />
       </div>
-
       <div className="bg-stone-600 col-span-6">
         <div className="h-[12vh] sm:h-[18vh] shadow-gray-500">
           <Typography
@@ -35,6 +34,7 @@ function HomePage() {
           </div>
         </div>
         <div className="bg-stone-100 h-[88vh] sm:h-[82vh] p-[1em] overflow-y-scroll lg:p-[8em]">
+
           <Outlet />
         </div>
       </div>
