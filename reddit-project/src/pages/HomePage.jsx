@@ -10,7 +10,7 @@ function HomePage() {
         <SideBar />
       </div>
 
-      <div className="bg-stone-100 h-[100vh] sm:h-[100vh] col-span-6  overflow-y-scroll ">
+      <div className=" h-[100vh] sm:h-[100vh] sm:col-span-6 md:col-span-5 lg:col-span-6 pb-5  overflow-y-scroll ">
         <Outlet />
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { HomePage, HandleError, PostPage } from "./pages";
+import { HomePage, HandleError, PostPage, NewPage } from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ThemeWrapper from "./theme/ThemeWrapper";
 import CommentPage from "./pages/CommentPage";
@@ -17,6 +17,11 @@ const router = createBrowserRouter([
       {
         path: "comment/:id",
         element: <CommentPage />, // Render a specific comment based on ID
+      },
+
+      {
+        path: "new",
+        element: <NewPage />,
       },
     ],
   },

@@ -21,9 +21,16 @@ function SideBarSearch() {
     );
 
     if (result.length > 0) {
-      setpagePostData(result); // Update with filtered results
-      setOutput(""); // Clear the "not found" message
+      setpagePostData(result);
+
+      // Update with filtered results
+      setTimeout(() => {
+        setOutput("");
+      }, 3000);
+
+      // Clear the "not found" message
     } else if (result.length === 0) {
+      setpagePostData(pagepostData);
       setOutput("Sorry, nothing found!");
       // Clear the output and input after 3 seconds
       setTimeout(() => {

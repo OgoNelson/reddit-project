@@ -11,6 +11,7 @@ import SideBarLogo from "./SideBarLogo";
 import SideBarSearch from "./SideBarSearch";
 import BuildIcon from "@mui/icons-material/Build";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import { Link } from "react-router-dom";
 
 function SideBar() {
   return (
@@ -23,10 +24,13 @@ function SideBar() {
 
         {/* Sidebar Buttons */}
         <div>
-          <SideBarItems
-            primary="Home"
-            icon={<HomeIcon sx={{ width: "20px" }} />}
-          />
+          <Link to="/">
+            <SideBarItems
+              primary="Home"
+              icon={<HomeIcon sx={{ width: "20px" }} />}
+            />
+          </Link>
+
           <SideBarItems
             primary="Notification"
             icon={<NotificationsNoneIcon sx={{ width: "20px" }} />}

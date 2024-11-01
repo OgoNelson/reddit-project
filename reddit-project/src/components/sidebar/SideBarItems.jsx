@@ -22,13 +22,14 @@ function SideBarItems({ primary, icon, icon2 }) {
             <ListItem
               disablePadding
               secondaryAction={
-                isClicked ? (
-                  <KeyboardArrowUpIcon
-                    sx={{ color: hover ? "red" : "black", width: "20px" }}
-                  />
-                ) : (
-                  <List sx={{ color: hover ? "red" : "black" }}>{icon2}</List>
-                )
+                // isClicked ?
+                //   <KeyboardArrowUpIcon
+                //     sx={{ color: hover ? "red" : "black", width: "20px" }}
+                //   />
+                // ) : (
+                //   <List sx={{ color: hover ? "red" : "black" }}>{icon2}</List>
+                icon2
+                // )
               }
             >
               <ListItemButton

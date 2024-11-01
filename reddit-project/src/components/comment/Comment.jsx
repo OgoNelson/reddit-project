@@ -5,6 +5,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ShareIcon from "@mui/icons-material/Share";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import MessageIcon from "@mui/icons-material/Message";
 // import commentData from "./commentData";
 import {
   Avatar,
@@ -19,7 +20,12 @@ import CommentCard from "./CommentCard";
 
 function Comment() {
   const { pagepostData } = useContext(GlobalContext);
+  const [ischartClicked, setIsChartClicked] = useState(false);
   const params = useParams();
+
+  const handlechartClicked = () => {
+    setIsChartClicked(!ischartClicked);
+  };
 
   // Find the post with the matching ID
   const findPost = pagepostData.find((post) => post.id == params.id);
@@ -104,6 +110,40 @@ function Comment() {
         {/* Display Comments */}
         <CommentCard />
       </div>
+      <div
+        onClick={handlechartClicked}
+        className="fixed h-7 w-7 bg-blue-400 rounded-[100%] flex items-center justify-center right-8 p-6 bottom-5"
+      >
+        <MessageIcon sx={{ color: "white" }} />
+      </div>
+      {ischartClicked && (
+        <div className="fixed  h-[40vh] w-[20vw] bottom-5  right-[6em] bg-white rounded-md">
+          <div className="flex items-center justify-center">
+            <img
+              className="h-[50px] w-[50px] my-3 rounded-[100%]"
+              src="https://img.freepik.com/free-photo/portrait-young-businesswoman-holding-eyeglasses-hand-against-gray-backdrop_23-2148029483.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1728172800&semt=ais_hybrid"
+            />
+          </div>
+          <p className="p-1 text-[10px] ml-1 bg-stone-100 w-fit mb-1">
+            Hello! am Customer Support
+          </p>
+          <p className="p-1 text-[10px] ml-1 bg-stone-100 w-fit mb-1">??</p>
+          <div className="flex justify-end flex-col items-end">
+            <p className="p-1 text-[10px] mr-1 bg-stone-100 w-fit mb-1">
+              Hello
+            </p>
+            <p className="p-1 text-[10px] mr-1 bg-stone-100 w-fit mb-1">
+              i am hungry
+            </p>
+            <p className="p-1 text-[10px] mr-1 bg-stone-100 w-fit mb-1">
+              i need Food
+            </p>
+          </div>
+          <p className="p-1 text-[10px] ml-1 bg-stone-100 w-fit mb-1">
+            Please contact us on 08142310543
+          </p>
+        </div>
+      )}
     </div>
   );
 }

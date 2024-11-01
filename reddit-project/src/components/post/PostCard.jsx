@@ -47,7 +47,7 @@ function PostCard() {
   };
 
   return (
-    <div className="mx-[10px] my-[10px] md:mx-[10vw] md:my-[0px]">
+    <div className="mx-[10px] my-[10px] md:mx-[10vw] md:my-[0px] h-fit">
       <div className="hidden md:flex items-center justify-center h-[15vh] font-medium text-[1.5em]">
         <h2>Find something interesting to discuss</h2>
       </div>
@@ -67,8 +67,10 @@ function PostCard() {
               />
             </div>
             {/* Post content */}
-            <div className="px-3">
-              <h2 className="mb-5 text-start text-pretty">{postItem.post}</h2>
+            <div className="px-3 ">
+              <h2 className="mb-5 h-[10vh] truncate pt-2 text-start text-pretty">
+                {postItem.post}
+              </h2>
               <p className="mb-5">
                 {postItem.time}
                 <span className="text-red-400 text-[13px]">
@@ -95,7 +97,6 @@ function PostCard() {
                   />
                 </div>
                 <Link to={`/comment/${postItem.id}`}>
-                  
                   <div className="flex items-center gap-1">
                     <ModeCommentIcon sx={{ opacity: "0.5" }} />
                     <p>{postItem.postComment}</p>
